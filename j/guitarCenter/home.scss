@@ -1,0 +1,82 @@
+$m_argin : 30px;
+
+
+@mixin height($h1){
+	-webkit-height: $h1;
+     -moz-height: $h1;
+      -ms-height: $h1;
+        height: $h1;
+}
+.photo{@include height(300px);}
+
+.mainPagePic,.thirdPageImg{@include height(350px);}
+.secondPageDiv,.secondPageImg{@include height(430px);}
+.secondPageDivInfo{@include height(400px);}
+
+
+
+
+@mixin width($w1){
+	-webkit-width: $w1;
+     -moz-width: $w1;
+      -ms-width: $w1;
+        width: $w1;
+}
+.btn,#btn{@include width(100px);}
+.descrip_tion{@include width(200px);}
+input,textarea{@include width(300px);}
+#printinfo label{@include width(400px);}
+.secondPageImg{@include width(500px);}
+.photo,.mainPagePic,.thirdPageImg{@include width(600px);}
+.secondPageDivInfo{@include width(900px);}
+.secondPageDiv{@include width(1600px);}
+
+
+.photo,.secondPageDiv,.secondPageImg,.thirdPageImg{
+	border:2px solid;
+}
+
+.h,h3,.thirdPageImg{
+
+	margin-left: 300px;
+}
+
+.showMsg{
+	color:red;
+}
+
+label{
+	display: inline-block;
+	font-size: 20px;
+	margin-left: $m_argin ;
+	width:200px;
+}
+
+.edit{
+	margin-left: 100px;
+}
+
+.colo{
+	background-color: black;
+}
+input,textarea{
+		
+		margin-top: $m_argin ;
+	}
+body{
+		background-color: #f4bf42;
+	}
+.navbar{
+	margin-top: $m_argin; 
+	font-size: 16px;
+}
+
+.secondPageDivInfo
+{
+	@extend .secondPageImg;
+	margin-left: $m_argin 
+}
+#conformation{
+	margin-left: 400px; 
+	text-decoration: underline;
+}

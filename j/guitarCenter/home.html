@@ -1,0 +1,61 @@
+
+	<div class="row">
+		<div class="col-lg-10 col-sm-5"></div>
+		<div class="col-lg-2 col-sm-4">
+			<button type="button" class="btn btn-primary btn-lg active" ng-click= "buy()">Buy</button>
+		</div>
+	</div>
+	<br>
+
+	<div class="row">
+		<div class="col-xs-5 col-sm-12 col-lg-2"></div>
+		<div class="col-xs-7 col-sm-2 col-lg-1">
+			<i class="fa fa-chevron-left" aria-hidden="true"  ng-click = "pre()"></i>
+		</div>
+		<div class="col-xs-1 hidden-lg hidden-sm"></div>
+		<div class="col-xs-10 col-sm-8 col-lg-6">
+
+			<img src="{{pics}}" style="width:90%; height: 30%;">
+		</div>
+		<div class="col-xs-5 hidden-lg hidden-sm"></div>
+
+		<div class="col-xs-7 col-sm-2 col-lg-1">
+			<i class="fa fa-chevron-right" aria-hidden="true" ng-click = "next()"></i>
+		</div>
+		<div class="col-xs-6  col-lg-2"></div>
+	</div>
+	<br>
+
+
+	<div class="row" style="margin-left: 25px;"> 
+		<div class="col-xs-2 hidden-lg"></div>
+		<div class="col-lg-12 col-sm-12 col-xs-10">
+			<button style = "width: 200px; padding-left: 20px;" type="button" class="btn btn-primary" ng-click = "toggle1()">
+				<i class="fa fa-plus-circle" aria-hidden="true"></i> &nbsp Product Description</button>
+			<br>
+				<p ng-hide= "p1">{{product.product_description}}</p>
+			<br>
+		</div>
+
+		<div class="col-xs-2 hidden-lg"></div>
+
+		<div class="col-lg-10 col-sm-12 col-xs-10">
+			<button style = "width: 200px;" type="button" class="btn btn-primary" ng-click = "toggle2()">
+				<i class="fa fa-plus-circle" aria-hidden="true"></i>&nbsp shipping Details</button>
+			<br>
+				<p ng-hide = "p2">{{product.shipping_details}}</p>
+			<br>
+		</div>
+
+		<div class="col-xs-2 hidden-lg"></div>	
+
+		<div class="col-lg-10 col-sm-12 col-xs-10">
+			<button style = "width: 200px;" type="button" class="btn btn-primary" ng-click = "toggle3()">
+				<i class="fa fa-plus-circle" aria-hidden="true"></i>&nbsp customer Reviews</button>
+			<br>
+				<p ng-hide = "p3">{{product.customer_reviews}}</p>
+			<br>
+		</div>
+	</div>
+
+

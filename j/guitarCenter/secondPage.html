@@ -1,0 +1,81 @@
+<div class = "row" style=" border: 3px solid;">
+	<div class="col-lg-4 col-xs-12 col-md-6 " style=" height: 400px;">
+		<img ng-src="{{finalimg}}" style=" height: 100%; width: 100%;">
+	</div>
+	<div class="col-md-2 hidden-lg-xs"></div>
+	<div class="col-lg-8 col-md-10 col-xs-12">
+		<p style=" text-decoration:underline;">	
+			<h3>Description:</h3>{{finaldescription.product_description}}
+		</p>
+		
+		<p style="text-align: center;">
+			<strong>
+				<h2>Price:</h2>{{finalprice.price}}
+			</strong></p>
+		
+		<p>
+			<h3 style="text-decoration:underline; "> Reviews:</h3>
+			 {{finalreview.customer_reviews}}
+		</p>
+	</div>
+</div>
+<br>
+
+<div ng-hide="info" class=" col-lg-12 col-md-6 col-s-6 h" style="margin-left: 500px; ">
+	<form name="myform" novalidate>
+
+		<label>First Name: </label> <input type="text"  name = "fname" placeholder="First name" ng-model= "fname" style="text-transform: capitalize;" required><br>
+		<div ng-messages = "myform.fname.$error" ng-if = "myform.fname.$dirty">
+			<p class = "showMsg" ng-message = "required" >Please write first name</p>
+		</div>
+
+
+		
+		<label>Last Name: </label> <input type="text" name= "lname" placeholder="Last name" ng-model = "lname" style="text-transform: capitalize;" required><br>
+		<div ng-messages = "myform.lname.$error" ng-if = "myform.lname.$dirty">
+			<p class = "showMsg" ng-message = "required">Please write lirst name</p>
+		</div>
+
+
+
+		<label>Email: </label> <input type="email" name = 'email' placeholder="Email" ng-model = "email" required><br>
+		<div ng-messages = "myform.email.$error" ng-if = "myform.email.$dirty">
+			<p class = "showMsg" ng-message="required">Please write email Id</p>
+			<p class = "showMsg" ng-message="email">Not a email</p>
+		</div>
+
+
+
+		<label>Phon No: </label> <input type="text" name="phno" placeholder="phon no:" ng-model="phno" ng-pattern="/^\d{0,9}(\.\d{1,9})?$/" required><br>
+		<div ng-messages = "myform.phno.$error" ng-if = "myform.phno.$dirty">
+			<p class = "showMsg" ng-message = "required" >Please write phon no.</p>
+			<p class = "showMsg" ng-message = "pattern" >Not valid phon no.</p>
+		</div>
+
+
+   <label>Credit Card: </label> <input type="text" name="cc" ng-model="cc" placeholder="Credit card" pattern="^4\d{3}([\ \-]?)\d{4}\1\d{4}\1\d{4}$" required>&nbsp&nbsp
+		<img ng-if ="myform.cc.$valid" style="width: 50px; height: 30px;" src="visa.jpg"><br>
+		<div ng-messages = "myform.cc.$error" ng-if = "myform.cc.$dirty"> 
+			<p class = "showMsg" ng-message = "required" >Please write correct no.</p>
+			<p class = "showMsg" ng-message = "pattern" >Write full 16 digit no.</p>
+		</div>
+		
+		<br>
+		<br>
+    </form>
+</div>
+		<button type="button" class="btn btn-primary btn-lg active" style= "width: 200px;" ng-click = "sub()" ng-disabled="myform.$invalid">Go To Review</button>
+	
+
+<div class="col-lg-12 col-md-12 col-s-12" ng-show = "showonclick" id = "printinfo" style="margin-left: 100px;">
+ 	<label><span>First Name: </span>{{fname}}</label><br>
+ 	<label><span> Last Name: </span> {{lname}}</label><br>
+ 	<label><span>Email:</span> {{email}}</label><br>
+ 	<label><span>phone no:</span> {{phno}}</label><br>
+ 	<label><span> Credit Card:</span> {{cc}}</label>
+</div>
+<br><br>
+<div class="edit" ng-show = "showonclick" >
+	<button class="btn btn-primary btn-lg active" ng-click= "edit()">Edit</button> &nbsp&nbsp&nbsp <button class="btn btn-primary btn-lg active" ng-click="purchase()">Buy</button>
+</div>
+<button class="btn btn-primary btn-lg active" style = "margin-left: 800px;" ng-click="retu()">Return</button>
